@@ -1,0 +1,73 @@
+IronsDeploy
+
+A lightweight deployment orchestrator for self-hosted and local network environments. IronsDeploy sits between raw Docker Compose and heavyweight solutions like Kubernetes, providing version tracking, health monitoring, and atomic rollbacks.
+
+🚀 Status: Early Development
+
+This project is currently being implemented in Go. We are moving from the design phase to the MVP (Phase 1).
+
+🛠 Tech Stack
+
+Language: Go 1.22+
+
+CLI Framework: Cobra & Viper
+
+Container Engine: Docker SDK (Moby)
+
+State Management: SQLite
+
+Config Format: YAML
+
+📂 Project Structure
+
+We follow the standard Go project layout:
+
+cmd/ironsdeploy: Entry point for the CLI binary.
+
+internal/cli: Command definitions and flag parsing.
+
+internal/config: YAML parsing and validation logic.
+
+internal/core: The orchestration engine and deployment logic.
+
+internal/docker: Wrappers for the Docker Engine API.
+
+internal/state: SQLite persistence for deployment history and rollbacks.
+
+✨ Core Features (MVP)
+
+[ ] Config-driven deployments: Define your stack in ironsdeploy.yaml.
+
+[ ] Version tracking: Automatic tagging of deployments.
+
+[ ] Health checks: Built-in monitoring with configurable endpoints.
+
+[ ] Atomic Rollbacks: One-command revert to previous stable states.
+
+[ ] Multi-environment: Native support for local, staging, and production overrides.
+
+🏁 Getting Started
+
+Prerequisites
+
+Go installed.
+
+Docker running locally.
+
+Development Setup
+
+Clone the repository.
+
+Install dependencies:
+
+go mod download
+
+
+Run the CLI:
+
+go run cmd/ironsdeploy/main.go --help
+
+
+📜 License
+
+This project is licensed under the MIT License.
